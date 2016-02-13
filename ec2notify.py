@@ -43,15 +43,27 @@ def send_email(sender, pwd, recipient, subject, body):
         print "failed to send mail"
 
 
+def filter_by_tag(key, value):
+    """Filter the running instances by given tag(team)
 
-
-def draft_email(team, details):
+    :param key: A string which is the key for the tag
+    :param value: A string which is the value of the tag, here its team name
+    :return: A list of tuples which is the information of the running instances
+            example : [(name, instance_id, instance_type), (name, instance_id, instance_type) ...]
     """
-
-    :param team:
-    :param details:
-    :return:
-    """
+    results = []
+    fltr = [{'Name': 'tag:' + key, 'Values': value}, {'Name': 'instance-state-name', 'Values': ['running']}]
+    instances = ec2.instances.filter(
+        Filters=fltr)
+    for instance in instances:
+        tags = instance.tags
+        instance_name = None
+        for tag in tags:
+            if tag['Key'] == 'Name':
+                instance_name = tag['Value']
+        result = (instance_name, instance.id, instance.instance_type)
+        results.append(result)
+    return results
 
 
 def draft_email(team, instance_info):
