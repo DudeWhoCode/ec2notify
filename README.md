@@ -10,7 +10,7 @@ Before using this script you need the following.
 how to create them](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html)
 
 ## Getting started
-1. Create a Virtual envorinment, activate it and do,
+1. Clone this project, create a Virtual envorinment, activate it and do,
     `pip install -r requirements.txt`
 2. Open ec2notify.cfg and edit the following fields
     * __tags__ : 
