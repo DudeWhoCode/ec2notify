@@ -2,14 +2,14 @@
 A simple daemon that monitors all the AWS ec2 running instances using boto3, filters it by the team/group who created it
 and sends an email as a reminder to the respective team members end of every day to shutdown idle instances.
 
-# prerequisites
+## prerequisites
 Before using this script you need the following.
 
 1. An active AWS_KEY and AWS_SECRET with proper permissions
 2. ec2 instances need to be tagged. [click to know what are tags and
 how to create them](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html)
 
-# Getting started
+## Getting started
 1. Create a Virtual envorinment, activate it and do,
     `pip install -r requirements.txt`
 2. Open ec2notify.cfg and edit the following fields
@@ -42,5 +42,5 @@ how to create them](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tag
     `30 18 * * * cd /path/to/project && /path/to/project/env/bin/python/path/to/project/ec2notify.py`
     * Enter either one of them based on your need and close it. Now ec2notify will run at 6:30 pm everyday.
 
-# The final reminder email
+## The final reminder email
 ![alt text](http://i.imgur.com/uvzlMIS.png)
