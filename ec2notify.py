@@ -87,3 +87,23 @@ format : Name, Instance-id, Instance-type.\n
     return subject, body
 
 
+def run():
+    tags = config.get('data', 'tags')
+    tags = ast.literal_eval(tags)
+    recipients = config.get('email', 'recipients')
+    recipients = ast.literal_eval(recipients)
+    username = config.get('email', 'username')
+    passwd = config.get('email', 'password')
+    instances = {}
+    for key, vals in tags.items():
+        for val in vals:
+            instances.update({val: filter_by_tag(key, [val])})
+    print instances
+    for team, details in instances.items():
+        subject, body = draft_email(team, details)
+        print body
+        send_email(username, passwd, recipients[team], subject, body)
+
+
+if __name__ == '__main__':
+    run()
