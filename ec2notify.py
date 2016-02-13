@@ -88,6 +88,11 @@ format : Name, Instance-id, Instance-type.\n
 
 
 def run():
+    """Start point of the code
+
+    All other functions are meaningfully called here
+
+    """
     tags = config.get('data', 'tags')
     tags = ast.literal_eval(tags)
     recipients = config.get('email', 'recipients')
