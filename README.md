@@ -22,7 +22,7 @@ how to create them](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tag
         `tags={'team' : ['data', 'backend', 'frontend']}`
     * __username__ : 
         The username of the sender email, for example `notify@company.com`
-    * __username__ : 
+    * __password__ : 
         The password for sender email [`notify@company.com`]
     * __recipients__ : 
         recipients is a dictionary where the key is the "team name" and value is always a list of email ids of that 
