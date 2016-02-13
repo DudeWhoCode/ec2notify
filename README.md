@@ -41,3 +41,6 @@ how to create them](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tag
     * If you are running it under virtual environment, you need to activate it first and give absolute path to python and script
     `30 18 * * * cd /path/to/project && /path/to/project/env/bin/python/path/to/project/ec2notify.py`
     * Enter either one of them based on your need and close it. Now ec2notify will run at 6:30 pm everyday.
+
+# The final reminder email
+![alt text](http://i.imgur.com/uvzlMIS.png)
