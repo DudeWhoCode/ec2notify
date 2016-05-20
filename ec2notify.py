@@ -93,7 +93,7 @@ def run():
     All other functions are meaningfully called here
 
     """
-    tags = config.get('data', 'tags')
+    tags = config.get('email', 'tags')
     tags = ast.literal_eval(tags)
     recipients = config.get('email', 'recipients')
     recipients = ast.literal_eval(recipients)
