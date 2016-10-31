@@ -82,8 +82,8 @@ def draft_email(team, instance_info):
     :return: Subject and body for email as two separate strings
     """
     qotd = Goodreads.get_daily_quote()
-    SUBJECT_TMPL.format(team.upper())
-    BODY_TMPL.format(team)
+    subject = SUBJECT_TMPL.format(team.upper())
+    body = BODY_TMPL.format(team)
 
     for detail in instance_info:
         body = body + str(detail) + '\n'
